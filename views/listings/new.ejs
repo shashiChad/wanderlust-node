@@ -3,7 +3,12 @@
 <div class="col-8 offset-2">
     <br/><br/>
 <h3>Create a new listing</h3>
-    <form method="POST" action="/listings" class="needs-validation" novalidate>
+    <form 
+    method="POST" 
+    action="/listings"
+    novalidate 
+    class="needs-validation" 
+    enctype="multipart/form-data">
         <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input  name="listing[title]" 
@@ -17,8 +22,9 @@
         
         <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea name="listing[description]"  
-        id="Enter description"
+        <textarea 
+        name="listing[description]"  
+        id="description"
         placeholder="enter a description"
         class="form-control"
         required
@@ -27,20 +33,22 @@
        <div class="invalid-feedback">Please enter a short description</div>
         </div>
         <div class="mb-3">
-        <label for="image" class="form-label">Image Link</label>
-        <input  name="listing[image]" 
-        type="text"
-        placeholder="enter image url link"
+        <label for="imageFile" class="form-label">Upload Image</label>
+        <input
+        name="listing[image]"
+        id="imageFile" 
+        type="file"
         class="form-control"
+        required
         />
-        <div class="invalid-feedback">Please enter a valid image url</div>
+        
         </div>
         <div class="row ">
         <div class="mb-3 col-md-4">
         <label for="price" class="form-label">Price</label>
         <input name="listing[price]" 
         placeholder="1200" 
-        type="number"
+        
         class="form-control"
         required
         />
